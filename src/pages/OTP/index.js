@@ -12,13 +12,17 @@ const OTPPage = () => {
 
   const handleConfirmation = (e) => {
     e.preventDefault();
-    setSuccess(true);
-  }
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSuccess(true);
+    }, 2000);
+  };
 
   useEffect(() => {
     if ('OTPCredential' in window) {
       const ac = new AbortController();
-      form.current.addEventListener('submit', () => {
+      form.current.addEventListener('submit', (e) => {
         ac.abort();
       }, false)
 
@@ -31,10 +35,9 @@ const OTPPage = () => {
           setOtp(otpObj.code);
           ac.abort();
 
-          setLoading(true);
-          setTimeout(() => {
-            setLoading(false);
-          }, 2000);
+          form.current.dispatchEvent(
+            new Event("submit", { cancelable: true, bubbles: true })
+          );
         })
         .catch(err => {
           ac.abort();
@@ -79,7 +82,7 @@ const OTPPage = () => {
               <br></br>
               <Note red>@fancy-otp.web.app #1234</Note>
             </NoteContainer>
-            <Button type="submit">
+            <Button type="submit" loading={loading}>
               {!loading && <span>Konfirmasi</span>}
               {loading && <Loading />}
             </Button>
