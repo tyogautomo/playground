@@ -75,10 +75,14 @@ const OTPPage = () => {
               />
             </InputContainer>
             <Note bold>Cara ngirim OTP</Note>
-            <Note>Kirim SMS dengan format berikut:</Note>
+            <Note>Kirim SMS dengan format berikut</Note>
+            <Note>dengan batas 1 menit setelah page ini di-load:</Note>
             <br></br>
             <NoteContainer>
-              <Note>{`<pesan SMS nya apa aja terserah>`}</Note>
+              <Note>Bagian ini adalah pesan SMS nya, apa aja terserah.</Note>
+              <Note>Bagian ini ga akan terbaca oleh browser.</Note>
+              <Note>Yang akan terbaca adalah baris paling terkahir</Note>
+              <Note>dengan warna merah berikut</Note>
               <br></br>
               <Note red>@fancy-otp.web.app #1234</Note>
             </NoteContainer>
