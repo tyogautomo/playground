@@ -50,7 +50,6 @@ const OTPPage = () => {
     }
   }, []);
 
-
   return (
     <Container>
       {success ? (
