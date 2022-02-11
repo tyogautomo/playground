@@ -4,7 +4,7 @@ import { Container, Title, InputContainer, Box, Input, Num, Note, NoteContainer,
 
 const OTPPage = () => {
   const form = useRef(null);
-
+  
   const [otp, setOtp] = useState('');
   const [focused, setFocused] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,8 +20,9 @@ const OTPPage = () => {
   };
 
   useEffect(() => {
+    let ac = null;
     if ('OTPCredential' in window) {
-      const ac = new AbortController();
+      ac = new AbortController();
       form.current.addEventListener('submit', (e) => {
         ac.abort();
       }, false)
@@ -48,6 +49,8 @@ const OTPPage = () => {
         ac.abort();
       }, 1 * 60 * 1000);
     }
+
+    return () => ac && ac.abort();
   }, []);
 
   return (
@@ -85,7 +88,7 @@ const OTPPage = () => {
               <br></br>
               <Note red>@fancy-otp.web.app #1234</Note>
             </NoteContainer>
-            <Button type="submit" loading={loading}>
+            <Button type="submit" $loading={loading}>
               {!loading && <span>Konfirmasi</span>}
               {loading && <Loading />}
             </Button>

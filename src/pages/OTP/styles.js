@@ -24,9 +24,9 @@ export const Note = styled.div(({ bold, red }) => [
   red && tw`text-red-600`,
 ]);
 export const NoteContainer = tw.div`background-color[#d6d6d6] p-4 rounded-lg`;
-export const Button = styled.button(({ loading }) => [
+export const Button = styled.button(({ $loading }) => [
   tw`border-none flex justify-center items-center font-bold text-white background-color[#488c6a] font-size[2rem] width[80%] h-14 rounded-lg active:background-color[#2e6b4d] mt-20`,
-  loading && tw`background-color[#c9c9c9]`,
+  $loading && tw`background-color[#c9c9c9]`,
 ]);
 
 export const Loading = styled.div`

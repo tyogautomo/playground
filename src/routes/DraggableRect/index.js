@@ -1,10 +1,10 @@
+import React from 'react';
 import { DraggableRect } from '../../pages/DraggableRect';
 
 const DraggableRectRoute = {
   props: {
     path: '/draggable-rect',
-    component: DraggableRect,
-    exact: true,
+    element: <DraggableRect />,
   },
   isPublic: true,
   name: 'Draggable Rect',

@@ -1,18 +1,18 @@
 import { MobileContainer } from './styles';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { OTPPage } from './pages/OTP/index';
 import { routes } from './routes';
+import { NotFoundPage } from './pages/404';
 
-function App() {
+const App = () => {
   return (
     <MobileContainer>
       <Router>
-        <Switch>
-          {routes.map(route => <Route {...route.props} />)}
-        </Switch>
+        <Routes>
+          {routes.map((route, i) => <Route key={i} {...route.props} />)}
+          <Route path="/*" element={<NotFoundPage />} />
+        </Routes>
       </Router>
-      <OTPPage />
     </MobileContainer>
   );
 }
