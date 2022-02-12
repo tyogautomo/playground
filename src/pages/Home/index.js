@@ -12,7 +12,7 @@ const Home = () => {
       <Content>
         {contents.map((content, i) => (
           <Link to={content.path} key={i}>
-            <Card>{content.title}</Card>
+            <Card>{i + 1}. {content.title}</Card>
           </Link>
         ))}
       </Content>
