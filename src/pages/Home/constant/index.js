@@ -10,7 +10,11 @@ export const contents = [
     path: ROUTES.DraggableRect,
   },
   {
-    title: 'Drop Point',
-    path: ROUTES.DropPoint,
+    title: 'Map Leaflet',
+    path: ROUTES.MapLeaflet,
+  },
+  {
+    title: 'Map Google',
+    path: ROUTES.MapGoogle,
   }
 ];

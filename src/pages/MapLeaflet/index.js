@@ -8,7 +8,7 @@ import Header from '../../modules/Header';
 import pinImage from './assets/marker.png';
 import { Container, GlobalStyles, Title, MapWrapper, Shadow, Coords, ResultTitle, ResultContainer, CurrentLocationBtn } from './styles';
 
-const DropPoint = () => {
+const MapLeaflet = () => {
   const [selectedCoords, setSelectedCoords] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -26,7 +26,7 @@ const DropPoint = () => {
           integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
           crossorigin=""></script>
       </Helmet>
-      <Header>Drop Point</Header>
+      <Header>Map Leaflet</Header>
       <Title>Tentukan Titik Pengantaran</Title>
 
       {/* MAPS */}
@@ -116,4 +116,4 @@ const CurrentLocBtn = () => {
   );
 };
 
-export { DropPoint };
+export { MapLeaflet };

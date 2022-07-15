@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "utomoplayground",
     "public": "build",
     "ignore": [
       "firebase.json",

@@ -1,13 +1,15 @@
 import { OtpRoute } from './OTP';
 import { HomeRoute } from './Home';
 import { DraggableRectRoute } from './DraggableRect';
-import { DropPointRoute } from './DropPoint';
+import { MapLeafletRoute } from './MapLeaflet';
+import { MapGoogleRoute } from './MapGoogle';
 
 const routes = [
   HomeRoute,
   OtpRoute,
   DraggableRectRoute,
-  DropPointRoute,
+  MapLeafletRoute,
+  MapGoogleRoute,
 ];
 
 export { routes };
