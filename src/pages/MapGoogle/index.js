@@ -22,6 +22,7 @@ const MapGoogle = () => {
         navigator.geolocation.getCurrentPosition((position) => {
           const { latitude, longitude } = position.coords;
           map.current.panTo({ lat: latitude, lng: longitude });
+          setSelectedCoords({ lat: latitude, lng: longitude });
         });
       } else {
         console.log('Geolocation is not supported by this browser.');
